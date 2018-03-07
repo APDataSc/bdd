@@ -1,0 +1,88 @@
+---
+title: "Primer informe"
+author: "Andrés Peña M."
+date: "6 de marzo de 2018"
+output:
+  word_document: default
+  html_document: default
+---
+
+#Introducción
+
+##Antecedentes
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+##Objetivos
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+##Primer chunk
+```{r echo=FALSE, eval=TRUE}
+x<-rnorm(100)
+x
+hist(x)
+```
+
+##Ejercicio en clase
+A continuación los *resultados* por provincia de los hogares **ecuatorianos**:
+
+```{r eval=TRUE, warning=FALSE, echo=FALSE, message=FALSE}
+library(foreign)
+library(dplyr)
+library(ggplot2)
+library(scales)
+setwd("C:\\Users\\Andres\\Documents\\Curso_R\\data")
+
+#Lectura de archivos .sav
+hogares <- read.spss(file="10 ENIGHUR11_HOGARES_AGREGADOS.SAV", 
+                     use.value.labels = TRUE, 
+                     to.data.frame = TRUE)
+table(hogares$Provincia)
+```
+
+A continuación los *resultados* del estado civil de los hogares **ecuatorianos**:
+
+```{r eval=TRUE, warning=FALSE, echo=FALSE, message=FALSE}
+tab1<-hogares%>%group_by(estado)%>%
+  summarise(cuenta=n())%>%
+  mutate(suma=sum(cuenta), 
+         relativo=round(cuenta/suma*100,2))%>%
+  select(estado, cuenta, relativo)
+
+names(tab1)<-c("Estado civil",
+               "Frecuencia", 
+               "%")
+print(tab1)
+```
+
+##Ejercicio en clase
+Escribir un condicional **IF** que evalúe si un número es positivo, negativo o 0.
+```{r eval=TRUE, warning=FALSE, message=FALSE}
+x<-0
+if(x>0){
+print("positivo")  
+} else if (x<0){
+print("negativo")  
+} else {
+print("cero")  
+}
+```
+
+##Clase 5
+Cruce de estado civil por sexo del jefe del hogar:
+
+```{r }
+ggplot(hogares, aes(estado, fill=sexo)) + geom_bar(position="dodge")
+```
+
+```{r }
+gr3 <- ggplot(
+  hogares[hogares$estado!="Casado(a)", ], (aes(estado, fill=sexo))) + 
+geom_bar(aes(estado, (..count..)/sum(..count..)), position="dodge") + 
+scale_y_continuous(labels=percent) + scale_fill_grey() + theme_bw() +
+  
+
+gr3
+```
+
+
+
