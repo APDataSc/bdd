@@ -1,4 +1,4 @@
-# Bases de datos del Taller de Intreoducción a la Inferencia Estadística con R
+# Bases de datos del Taller de Introducción a la Inferencia Estadística con R
 
 ## R Users Group Ecuador®
 
