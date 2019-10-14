@@ -1,10 +1,10 @@
-# Bases de datos del Taller de Introducción a la Inferencia Estadística con R
+# Información del Curso de Análisis Estadístico con R
 
 ## R Users Group Ecuador®
 
 ### Andrés Peña M.
 
-#### Agosto 2018
+#### Octubre 2019
 
 www.rusersgroup.com
 
