@@ -1,10 +1,10 @@
-# Información del Curso de Análisis Estadístico con R
+# Análisis de Encuestas por Muestreo con R
 
 ## R Users Group Ecuador®
 
 ### Andrés Peña M.
 
-#### Octubre 2019
+#### Mayo 2021
 
 www.rusersgroup.com
 
