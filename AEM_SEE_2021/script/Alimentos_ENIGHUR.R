@@ -8,7 +8,7 @@ library(srvyr)
 library(reshape2)
 library(dplyr)
 
-setwd("C:/Users/apena/Desktop/INEC 2021/Tickets/ENIGHUR 11-12/bbd_ingresos_gastos_2011-2012/2011-2012/Tablas_Trabajo/02 TABLAS DE TRABAJO")
+setwd(".../02 TABLAS DE TRABAJO")
 
 #Base de Gastos del Hogar
 bdd <- read.spss("06 ENIGHUR11_GASTOS_V.sav", use.value.labels = F, 
