@@ -4,8 +4,10 @@
 
 ### Andrés Peña M.
 
-#### Mayo 2021
+#### Julio 2021
 
 www.rusersgroup.com
 
 https://www.facebook.com/Rusersgroup/
+
+Telegram: https://bit.ly/3ajW45n
